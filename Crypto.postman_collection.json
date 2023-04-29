@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "a58b14d3-d392-4307-b641-543308b82fea",
+		"name": "Crypto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25693045"
+	},
+	"item": [
+		{
+			"name": "Create Crypto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"NodeCoin\",\r\n    \"price\": 1.99,\r\n    \"marketCap\": 10,\r\n    \"created_at\": \"2020-01-03T18:15:05.000+00:00\",\r\n    \"createdAt\": \"2015-01-03T18:15:05.000+00:00\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/crypto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Cryptos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crypto/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Cryptos filtered",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crypto?page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Crypto by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crypto/644c061ae1b87f3151235c27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						"644c061ae1b87f3151235c27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Crypto by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crypto/name/bit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						"name",
+						"bit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Crypto by Id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 5\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/crypto/644c0638f98a034a531fd355",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						"644c0638f98a034a531fd355"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Crypto by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crypto/644c0638f98a034a531fd355",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						"644c0638f98a034a531fd355"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cryptos in CSV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crypto/csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cryptos ordered by creation date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crypto/sorted-by-date?order=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						"sorted-by-date"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cryptos ordered by marketCap",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crypto/sorted-by-marketCap?order=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						"sorted-by-marketCap"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cryptos by Price between two values",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/crypto/price-range?min=10&max=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						"price-range"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "10"
+						},
+						{
+							"key": "max",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset the Cryptos DDBB",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/crypto/reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypto",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
